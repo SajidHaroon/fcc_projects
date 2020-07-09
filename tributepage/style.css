@@ -1,0 +1,55 @@
+body{
+    background-color: cornsilk;
+}
+
+main{
+    display: block;
+}
+
+#title {
+    display: block;
+    background-color: lightgray;
+    text-align: center;
+
+}
+
+#img-div {
+    background-color: floralwhite;
+    padding: 20px;
+    text-align: center;
+}
+
+#image {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    display: block;
+}
+
+#headline {
+    margin: 50px 0;
+    text-align: center;
+}
+
+h3 {
+    display: block;
+    font-weight: bold;
+    font-size: 3em;
+}
+
+ul {
+    display: block;
+    /* margin: 0 auto 50px auto; */
+    /* text-align: center; */
+    margin-left: 500px;
+    margin-right: 500px;
+    text-align: justify;
+    font-size: 2em;
+}
+
+#tribute-link {
+    display: block;
+    text-align: center;
+}
