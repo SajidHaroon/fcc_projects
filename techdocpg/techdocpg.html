@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechDocPg</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1><em>JavaScript object basics</em></h1>
+    <p>Follow <a href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics" target="_blank">MDN Web Docs</a> for further details</p>
+    <hr>
+    <div id="article">
+        <main id="main-doc">
+            <!-- https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics -->
+            <section id="Object_Basics"class="main-section">
+                <header >
+                    Object Basics
+                </header>
+                <p class="section-content">An object is a collection of related data and/or functionality (which usually consists of several variables and functions — 
+                    which are called properties and methods when they are inside objects.) Let's work through an example to understand what they look like.</p>
+                    <p class="section-content">As with many things in JavaScript, creating an object often begins with defining and initializing a variable. </p>
+                
+                <code>
+                    const person = { <br>
+                    name: ['Bob', 'Smith'],<br>
+                    age: 32,<br>
+                    gender: 'male',<br>
+                    interests: ['music', 'skiing'],<br>
+                    bio: function() {<br>
+                      alert(this.name[0] + ' ' + this.name[1] + ' is ' + this.age + ' years old. He likes ' + this.interests[0] + ' and ' + this.interests[1] + '.');<br>
+                    },<br>
+                    greeting: function() {<br>
+                      alert('Hi! I\'m ' + this.name[0] + '.');<br>
+                    }
+                  };</code>
+            </section>
+            <br>
+            <hr>
+            <section id="Dot_Notation" class="main-section">
+                <header>Dot notation</header>
+                <p class="section-content">Above, you accessed the object's properties and methods using dot notation. 
+                    <li>
+                        The object name (person) acts as the namespace — it must be entered first to access anything encapsulated inside the object.
+                    </li></p>
+                <p class="section-content">Next you write a dot, then the item you want to access — 
+                    this can be the name of a simple property, an item of an array property, or a call to one of the object's methods, for example:</p>
+                <code>person.age <br>
+                    person.interests[1] <br>
+                    person.bio()</code>
+            </section>
+            <br>
+            <hr>
+            
+            <section id="Bracket_notation" class="main-section">
+                <header>Bracket notation</header>
+                <p class="section-content">There is another way to access object properties <li>
+                    — using bracket notation. Instead of using these:
+                </li></p>
+                <code>
+                    person.age <br>
+                    person.name.first</code>
+                <p class="section-content">You can use</p>
+                <code>
+                    person['age'] <br>
+                    person['name']['first']</code>
+            </section>
+            <br>
+            <hr>
+            <section id="Setting_object_members" class="main-section">
+                <header>Setting object members</header>
+                <p class="section-content">So far we've only looked at retrieving (or getting) object members <li>
+                    — you can also set (update) the value of object members by simply declaring the member you want to set (using dot or bracket notation), like this:
+                </li></p>
+                <code>person.age = 45; <br>
+                    person['name']['last'] = 'Cratchit';</code>
+                <p class="section-content"> Try entering the above lines, and then getting the members again to see how they've changed, like so:</p>
+                <code>person.age <br>
+                    person['name']['last']</code>
+            </section>
+            <br>
+            <hr>
+            <section id ="this_Object" class="main-section">
+                <header >this Object</header>
+                <p class="section-content">You may have noticed something slightly strange in our methods. Look at this one for example:</p>
+                <code>greeting: function() { <br>
+                    alert('Hi! I\'m ' + this.name.first + '.');<br>
+                  }</code>
+                <p class="section-content">You are probably wondering what "this" is. The this keyword refers to the current object the code is being written inside — so in this case this is equivalent to person. So why not just write person instead? As you'll see in the Object-oriented JavaScript for beginners article, when we start creating constructors and so on, this is very useful — it always ensures that the correct values are used when a member's context changes (for example, two different person object instances may have different names, but we want to use their own name when saying their greeting).</p>
+            </section>
+            <br>
+            <hr>
+            <section id="Summary" class="main-section">
+                <header>Summary</header>
+                <p class="section-content">Congratulations, you've reached the end of our first JS objects article 
+                    <li>— you should now have a good idea of how to work with objects in JavaScript</li>
+                    <li>— including creating your own simple objects.</li> </p>
+                <p class="section-content">You should also appreciate that objects are very useful as structures for storing related data and functionality — if you tried to keep track of all the properties and methods in our person object as separate variables and functions, it would be inefficient and frustrating, and we'd run the risk of clashing with other variables and functions that have the same names. Objects let us keep the information safely locked away in their own package, out of harm's way.</p>
+            </section>
+            <br>
+        </main>
+        <nav id="navbar">
+            <header>
+                Page Bookmarks
+                <br>
+                <br>
+                <hr class="hr-class">
+            </header>
+            <a class="nav-link" href="#Object_Basics"> Object Basics</a><br><hr class="hr-class">
+            <a class="nav-link" href="#Dot_Notation"> Dot Notation</a><br><hr class="hr-class">
+            <a class="nav-link" href="#Bracket_notation"> Bracket Notation</a><br><hr class="hr-class">
+            <a class="nav-link" href="#Setting_object_members"> Setting Object Members </a><br><hr class="hr-class">
+            <a class="nav-link" href="#this_Object">this Object</a><br><hr class="hr-class">
+            <a class="nav-link" href="#Summary"> Summary</a><hr class="hr-class">
+        </nav>
+    </div>
+    
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</body>
+</html>
